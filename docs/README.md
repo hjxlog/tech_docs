@@ -1,33 +1,29 @@
 ---
 home: true
 title: Home
-heroImage: https://vuejs.press/images/hero.png
+heroImage: /img/logo.jpg
 actions:
   - text: Get Started
     link: /getting-started.html
     type: primary
 
-  - text: Introduction
-    link: https://vuejs.press/guide/introduction.html
+  - text: HJXLOG
+    link: https://hjxlog.com
     type: secondary
 
 features:
-  - title: Simplicity First
-    details: Minimal setup with markdown-centered project structure helps you focus on writing.
-  - title: Vue-Powered
-    details: Enjoy the dev experience of Vue, use Vue components in markdown, and develop custom themes with Vue.
-  - title: Performant
-    details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-  - title: Themes
-    details: Providing a default theme out of the box. You can also choose a community theme or create your own one.
-  - title: Plugins
-    details: Flexible plugin API, allowing plugins to provide lots of plug-and-play features for your site.
-  - title: Bundlers
-    details: Default bundler is Vite, while Webpack is also supported. Choose the one you like!
-
-footer: MIT Licensed | Copyright © 2018-present VuePress Community
+  - title: Java 知识体系
+    details: 从基础知识到高级特性，全面掌握Java编程核心技能，涵盖面向对象、集合、并发处理、JVM优化及主流框架。
+  - title: AI 应用开发
+    details: 概括AI 应用开发的核心流程，从技术研发到实际应用，学习最新的AI 工具，提高生产效率，创造新价值。
+  - title: 分布式系统
+    details: 构建高可用、可扩展的现代应用架构，掌握主流分布式系统框架，支撑海量数据处理与实时服务。
+  - title: DevOps
+    details: 融合开发与运维，加速软件交付，提升系统可靠性与团队协作效率。
+  - title: 云计算与大数据
+    details: 构建弹性可扩展的数据处理平台，驱动智能决策与业务创新。
+  - title: 数据库
+    details: 设计高效可靠的数据存储方案，保障数据安全与业务连续性。
+    
+footer: Apache License 2.0 | Copyright © 2025-present HUANGJX
 ---
-
-This is the content of home page. Check [Home Page Docs][default-theme-home] for more details.
-
-[default-theme-home]: https://vuejs.press/reference/default-theme/frontmatter.html#home-page
