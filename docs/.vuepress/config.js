@@ -30,6 +30,10 @@ export default defineUserConfig({
                 text: '工具',
                 link: '/Tools/overview.md',
             },
+            {
+                text: '思考',
+                link: '/Thought/overview.md',
+            },
         ],
 
         // 可折叠的侧边栏
@@ -61,6 +65,16 @@ export default defineUserConfig({
                             link: 'IDEA'
                         },
                     ],
+                },
+            ],
+            '/Thought/': [
+                {
+                    text: '概览',
+                    link: 'overview'
+                },
+                {
+                    text: 'AI应用落地过程中的数据治理',
+                    link: 'AI应用落地过程中的数据治理'
                 },
             ],
         },
