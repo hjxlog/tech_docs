@@ -26,7 +26,10 @@ export default defineUserConfig({
                     },
                 ]
             },
-
+            {
+                text: '工具',
+                link: '/Tools/overview.md',
+            },
         ],
 
         // 可折叠的侧边栏
@@ -40,6 +43,22 @@ export default defineUserConfig({
                         {
                             text: 'Java 语言基础',
                             link: 'Java语言基础'
+                        },
+                    ],
+                },
+            ],
+            '/Tools/': [
+                {
+                    text: '工具',
+                    collapsible: true,
+                    children: [
+                        {
+                            text: '概览',
+                            link: 'overview'
+                        },
+                        {
+                            text: 'IDEA',
+                            link: 'IDEA'
                         },
                     ],
                 },
