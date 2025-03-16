@@ -27,6 +27,26 @@ export default defineUserConfig({
                 ]
             },
             {
+                text: 'Python',
+                prefix: '/Python/',
+                children: [
+                    {
+                        text: 'Python 基础',
+                        link: 'python_basics.md',
+                    },
+                ]
+            },
+            {
+                text: 'ElasticSearch',
+                prefix: '/ElasticSearch/',
+                children: [
+                    {
+                        text: 'ES 基础',
+                        link: 'ES_Basics.md',
+                    },
+                ]
+            },
+            {
                 text: '工具',
                 link: '/Tools/overview.md',
             },
@@ -49,6 +69,12 @@ export default defineUserConfig({
                             link: 'Java语言基础'
                         },
                     ],
+                },
+            ],
+            '/Python/': [
+                {
+                    text: 'Python 基础',
+                    link: 'python_basics'
                 },
             ],
             '/Tools/': [
