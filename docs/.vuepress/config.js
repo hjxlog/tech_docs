@@ -34,6 +34,10 @@ export default defineUserConfig({
                         text: 'Python 基础',
                         link: 'python_basics.md',
                     },
+                    {
+                        text: 'Python 高阶',
+                        link: 'python_advanced.md',
+                    },
                 ]
             },
             {
@@ -75,6 +79,10 @@ export default defineUserConfig({
                 {
                     text: 'Python 基础',
                     link: 'python_basics'
+                },
+                {
+                    text: 'Python 高阶',
+                    link: 'python_advanced'
                 },
             ],
             '/Tools/': [
