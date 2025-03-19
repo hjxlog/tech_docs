@@ -178,6 +178,281 @@ print(f"My name is {name} and I am {age} years old.")
 # 还有很多，转换大小写，取出前后空格，拆分，拼接，判断开头结尾等
 ```
 
+### 数字
+
+- 整数（`int`）：如 `10`, `-5`, `0`。
+- 浮点数（`float`）：如 `3.14`, `-0.001`, `2.0`。
+- 复数（`complex`）：如 `2 + 3j`, `1 - 4j`。
+- 布尔值（`bool`）：如 `True`, `False`（本质是 `1` 和 `0`）。
+
+```python
+# 1. 数字类型
+a = 10          # 整数
+b = 3.14        # 浮点数
+c = 2 + 3j      # 复数
+d = True        # 布尔值
+
+print(f"a = {a}, 类型是 {type(a)}")  # a = 10, 类型是 <class 'int'>
+print(f"b = {b}, 类型是 {type(b)}")  # b = 3.14, 类型是 <class 'float'>
+print(f"c = {c}, 类型是 {type(c)}")  # c = (2+3j), 类型是 <class 'complex'>
+print(f"d = {d}, 类型是 {type(d)}")  # d = True, 类型是 <class 'bool'>
+
+# 2. 类型转换
+x = int(3.14)       # 浮点数转整数
+y = float(10)       # 整数转浮点数
+z = complex(2)      # 整数转复数
+w = bool(0)         # 整数转布尔值
+
+print(f"x = {x}, y = {y}, z = {z}, w = {w}")  # x = 3, y = 10.0, z = (2+0j), w = False
+
+# 3. 数学运算
+sum_result = 10 + 5         # 加法
+diff_result = 10 - 5        # 减法
+prod_result = 10 * 5        # 乘法
+quot_result = 10 / 5        # 除法
+mod_result = 10 % 3         # 取余
+power_result = 2 ** 3       # 幂运算
+
+print(f"sum = {sum_result}, diff = {diff_result}, prod = {prod_result}, quot = {quot_result}, mod = {mod_result}, power = {power_result}")
+# 输出：sum = 15, diff = 5, prod = 50, quot = 2.0, mod = 1, power = 8
+
+# 4. 数学函数
+import math
+sqrt_value = math.sqrt(16)          # 平方根
+sin_value = math.sin(math.pi / 2)   # 正弦函数
+
+print(f"sqrt(16) = {sqrt_value}, sin(pi/2) = {sin_value}")  # sqrt(16) = 4.0, sin(pi/2) = 1.0
+
+# 5. 随机数
+import random
+random_number = random.randint(1, 100)  # 生成 1 到 100 的随机整数
+print(f"随机数: {random_number}")
+
+# 6. 格式化输出
+pi = 3.14159
+print(f"Pi 的值是 {pi:.2f}")  # Pi 的值是 3.14
+
+# 7. 比较运算
+print(10 == 10)  # True
+print(10 != 20)  # True
+print(10 > 20)   # False
+print(10 <= 20)  # True
+```
+
+### 列表
+
+列表是一个有序、可变的集合，用方括号 `[]` 表示，元素之间用逗号分隔，可以包含任意类型的元素（数字、字符串、列表等）。
+
+```python
+# 1. 列表的定义
+my_list = [1, 2, 3, "Python", 3.14, True]  # 包含多种类型的元素
+print(f"my_list: {my_list}")  # 输出: my_list: [1, 2, 3, 'Python', 3.14, True]
+
+# 2. 访问元素
+print(f"第一个元素: {my_list[0]}")  # 输出: 第一个元素: 1
+print(f"最后一个元素: {my_list[-1]}")  # 输出: 最后一个元素: True
+
+# 3. 修改元素
+my_list[1] = 20  # 修改第二个元素
+print(f"修改后的列表: {my_list}")  # 输出: 修改后的列表: [1, 20, 3, 'Python', 3.14, True]
+
+# 4. 添加元素
+my_list.append("New Item")  # 在末尾添加元素
+my_list.insert(2, "Inserted Item")  # 在索引 2 处插入元素
+my_list.extend([10, 20, 30])  # 扩展列表
+print(f"添加元素后的列表: {my_list}")
+# 输出: 添加元素后的列表: [1, 20, 'Inserted Item', 3, 'Python', 3.14, True, 'New Item', 10, 20, 30]
+
+# 5. 删除元素
+my_list.remove("Inserted Item")  # 删除指定元素
+popped_item = my_list.pop(2)  # 删除并返回索引 2 的元素
+del my_list[0]  # 删除索引 0 的元素
+print(f"删除元素后的列表: {my_list}, 被删除的元素: {popped_item}")
+# 输出: 删除元素后的列表: [20, 3, 'Python', 3.14, True, 'New Item', 10, 20, 30], 被删除的元素: 3
+
+# 6. 切片操作
+sub_list = my_list[1:5]  # 获取索引 1 到 4 的子列表
+step_list = my_list[::2]  # 每隔一个元素取一个
+print(f"子列表: {sub_list}, 步长列表: {step_list}")
+# 输出: 子列表: [3, 'Python', 3.14, True], 步长列表: [20, 'Python', True, 10, 30]
+
+# 7. 常用方法
+print(f"列表长度: {len(my_list)}")  # 输出: 列表长度: 9
+print(f"'Python' 的索引: {my_list.index('Python')}")  # 输出: 'Python' 的索引: 2
+print(f"20 出现的次数: {my_list.count(20)}")  # 输出: 20 出现的次数: 2
+
+# 8. 排序和反转
+num_list = [3, 1, 4, 1, 5, 9, 2, 6]
+num_list.sort()  # 排序
+print(f"排序后的列表: {num_list}")  # 输出: 排序后的列表: [1, 1, 2, 3, 4, 5, 6, 9]
+num_list.reverse()  # 反转
+print(f"反转后的列表: {num_list}")  # 输出: 反转后的列表: [9, 6, 5, 4, 3, 2, 1, 1]
+
+# 9. 遍历列表
+print("遍历列表:")
+for item in my_list:
+    print(item, end=" ")  # 输出: 20 3 Python 3.14 True New Item 10 20 30
+print()
+
+# 10. 列表的嵌套
+nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(f"嵌套列表: {nested_list}")  # 输出: 嵌套列表: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(f"嵌套列表的第一个元素: {nested_list[0]}")  # 输出: 嵌套列表的第一个元素: [1, 2, 3]
+
+# 11. 列表的复制
+import copy
+shallow_copy = my_list.copy()  # 浅拷贝
+deep_copy = copy.deepcopy(my_list)  # 深拷贝
+print(f"浅拷贝: {shallow_copy}, 深拷贝: {deep_copy}")
+```
+
+### 元组
+
+元组是一个有序、不可变的集合，用圆括号 `()` 表示，元素之间用逗号分隔，同样可以包含任意类型的元素（数字、字符串、列表等）。
+
+```python
+# 1. 元组的定义
+my_tuple = (1, 2, 3, "Python", 3.14, True)  # 包含多种类型的元素
+print(f"my_tuple: {my_tuple}")  # 输出: my_tuple: (1, 2, 3, 'Python', 3.14, True)
+
+# 2. 访问元素
+print(f"第一个元素: {my_tuple[0]}")  # 输出: 第一个元素: 1
+print(f"最后一个元素: {my_tuple[-1]}")  # 输出: 最后一个元素: True
+
+# 3. 切片操作
+sub_tuple = my_tuple[1:4]  # 获取索引 1 到 3 的子元组
+step_tuple = my_tuple[::2]  # 每隔一个元素取一个
+print(f"子元组: {sub_tuple}, 步长元组: {step_tuple}")
+# 输出: 子元组: (2, 3, 'Python'), 步长元组: (1, 3, 3.14)
+
+# 4. 元组的拼接
+tuple1 = (1, 2, 3)
+tuple2 = ("a", "b", "c")
+combined_tuple = tuple1 + tuple2  # 拼接两个元组
+print(f"拼接后的元组: {combined_tuple}")  # 输出: 拼接后的元组: (1, 2, 3, 'a', 'b', 'c')
+
+# 5. 元组的重复
+repeated_tuple = tuple1 * 3  # 重复元组
+print(f"重复后的元组: {repeated_tuple}")  # 输出: 重复后的元组: (1, 2, 3, 1, 2, 3, 1, 2, 3)
+
+# 6. 常用方法
+print(f"元组长度: {len(my_tuple)}")  # 输出: 元组长度: 6
+print(f"'Python' 的索引: {my_tuple.index('Python')}")  # 输出: 'Python' 的索引: 3
+print(f"3 出现的次数: {my_tuple.count(3)}")  # 输出: 3 出现的次数: 1
+
+# 7. 遍历元组
+print("遍历元组:")
+for item in my_tuple:
+    print(item, end=" ")  # 输出: 1 2 3 Python 3.14 True
+print()
+
+# 8. 元组的嵌套
+nested_tuple = ((1, 2, 3), (4, 5, 6), (7, 8, 9))
+print(f"嵌套元组: {nested_tuple}")  # 输出: 嵌套元组: ((1, 2, 3), (4, 5, 6), (7, 8, 9))
+print(f"嵌套元组的第一个元素: {nested_tuple[0]}")  # 输出: 嵌套元组的第一个元素: (1, 2, 3)
+
+# 9. 元组的不可变性
+# my_tuple[0] = 10  # 会报错，元组不可修改
+
+# 10. 元组的解包
+a, b, c, d, e, f = my_tuple  # 解包元组
+print(f"解包后的变量: a={a}, b={b}, c={c}, d={d}, e={e}, f={f}")
+# 输出: 解包后的变量: a=1, b=2, c=3, d=Python, e=3.14, f=True
+```
+
+### 字典
+
+**定义：**
+
+- 字典是一个无序、可变的键值对集合，用花括号 `{}` 表示，键值对之间用逗号分隔。
+- 键必须是不可变类型（如字符串、数字、元组），值可以是任意类型。
+- 字典的键是唯一的，值可以重复。
+
+```python
+# 1. 字典的定义
+my_dict = {
+    "name": "Alice",
+    "age": 25,
+    "is_student": False,
+    "courses": ["Math", "Physics"],
+    "address": {
+        "city": "Beijing",
+        "zipcode": "100000"
+    }
+}
+print(f"my_dict: {my_dict}")
+# 输出: my_dict: {'name': 'Alice', 'age': 25, 'is_student': False, 'courses': ['Math', 'Physics'], 'address': {'city': 'Beijing', 'zipcode': '100000'}}
+
+# 2. 访问元素
+print(f"姓名: {my_dict['name']}")  # 输出: 姓名: Alice
+print(f"城市: {my_dict['address']['city']}")  # 输出: 城市: Beijing
+
+# 3. 添加/修改元素
+my_dict["age"] = 26  # 修改年龄
+my_dict["gender"] = "Female"  # 添加性别
+print(f"修改后的字典: {my_dict}")
+# 输出: 修改后的字典: {'name': 'Alice', 'age': 26, 'is_student': False, 'courses': ['Math', 'Physics'], 'address': {'city': 'Beijing', 'zipcode': '100000'}, 'gender': 'Female'}
+
+# 4. 删除元素
+del my_dict["is_student"]  # 删除键值对
+popped_value = my_dict.pop("gender")  # 删除并返回键对应的值
+print(f"删除后的字典: {my_dict}, 被删除的值: {popped_value}")
+# 输出: 删除后的字典: {'name': 'Alice', 'age': 26, 'courses': ['Math', 'Physics'], 'address': {'city': 'Beijing', 'zipcode': '100000'}}, 被删除的值: Female
+
+# 5. 检查键是否存在
+if "age" in my_dict:
+    print("age 键存在")  # 输出: age 键存在
+
+# 6. 常用方法
+print(f"所有键: {my_dict.keys()}")  # 输出: 所有键: dict_keys(['name', 'age', 'courses', 'address'])
+print(f"所有值: {my_dict.values()}")  # 输出: 所有值: dict_values(['Alice', 26, ['Math', 'Physics'], {'city': 'Beijing', 'zipcode': '100000'}])
+print(f"所有键值对: {my_dict.items()}")  # 输出: 所有键值对: dict_items([('name', 'Alice'), ('age', 26), ('courses', ['Math', 'Physics']), ('address', {'city': 'Beijing', 'zipcode': '100000'})])
+
+# 7. 安全获取值
+print(f"获取不存在的键: {my_dict.get('height', '默认值')}")  # 输出: 获取不存在的键: 默认值
+
+# 8. 合并字典
+new_data = {"height": 170, "weight": 60}
+my_dict.update(new_data)  # 合并字典
+print(f"合并后的字典: {my_dict}")
+# 输出: 合并后的字典: {'name': 'Alice', 'age': 26, 'courses': ['Math', 'Physics'], 'address': {'city': 'Beijing', 'zipcode': '100000'}, 'height': 170, 'weight': 60}
+
+# 9. 清空字典
+my_dict.clear()
+print(f"清空后的字典: {my_dict}")  # 输出: 清空后的字典: {}
+
+# 10. 遍历字典
+my_dict = {"name": "Alice", "age": 25, "city": "Beijing"}
+print("遍历字典:")
+for key in my_dict:  # 遍历键
+    print(f"键: {key}, 值: {my_dict[key]}")
+# 输出:
+# 键: name, 值: Alice
+# 键: age, 值: 25
+# 键: city, 值: Beijing
+
+for key, value in my_dict.items():  # 遍历键值对
+    print(f"键值对: {key} -> {value}")
+# 输出:
+# 键值对: name -> Alice
+# 键值对: age -> 25
+# 键值对: city -> Beijing
+
+# 11. 字典的嵌套
+nested_dict = {
+    "person1": {"name": "Alice", "age": 25},
+    "person2": {"name": "Bob", "age": 30}
+}
+print(f"嵌套字典: {nested_dict}")
+# 输出: 嵌套字典: {'person1': {'name': 'Alice', 'age': 25}, 'person2': {'name': 'Bob', 'age': 30}}
+
+# 12. 字典的复制
+import copy
+shallow_copy = my_dict.copy()  # 浅拷贝
+deep_copy = copy.deepcopy(my_dict)  # 深拷贝
+print(f"浅拷贝: {shallow_copy}, 深拷贝: {deep_copy}")
+```
+
 ## 函数
 
 ### 定义函数
