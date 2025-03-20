@@ -453,6 +453,258 @@ deep_copy = copy.deepcopy(my_dict)  # 深拷贝
 print(f"浅拷贝: {shallow_copy}, 深拷贝: {deep_copy}")
 ```
 
+## 条件
+
+由于 python 并不支持 switch 语句，所以多个条件判断，只能用 elif 来实现。
+
+```python
+# 1. 基本的 if 语句
+# if 用于判断一个条件是否为真，如果为真则执行对应的代码块
+x = 10
+if x > 5:
+    print("1. 基本的 if 语句: x 大于 5")  # 条件为真，执行此代码块
+
+# 2. if-else 语句
+# else 用于在 if 条件为假时执行另一个代码块
+y = 3
+if y > 5:
+    print("2. if-else 语句: y 大于 5")  # 条件为假，跳过此代码块
+else:
+    print("2. if-else 语句: y 不大于 5")  # 条件为假，执行此代码块
+
+# 3. if-elif-else 语句
+# elif 用于检查多个条件，类似于 else if
+z = 7
+if z > 10:
+    print("3. if-elif-else 语句: z 大于 10")  # 条件为假，跳过此代码块
+elif z > 5:
+    print("3. if-elif-else 语句: z 大于 5 但小于等于 10")  # 条件为真，执行此代码块
+else:
+    print("3. if-elif-else 语句: z 小于等于 5")  # 条件为假，跳过此代码块
+
+# 4. 嵌套的 if 语句
+# if 语句可以嵌套在另一个 if 语句中，用于处理更复杂的条件
+a = 12
+if a > 10:
+    if a % 2 == 0:
+        print("4. 嵌套的 if 语句: a 大于 10 且是偶数")  # 外层和内层条件均为真，执行此代码块
+    else:
+        print("4. 嵌套的 if 语句: a 大于 10 且是奇数")  # 外层条件为真，内层条件为假时执行
+else:
+    print("4. 嵌套的 if 语句: a 小于等于 10")  # 外层条件为假时执行
+
+# 5. 简化的 if 语句（三元运算符）
+# 三元运算符用于简化简单的 if-else 语句，适合单行表达式
+b = 8
+result = "5. 三元运算符: b 大于 5" if b > 5 else "5. 三元运算符: b 不大于 5"
+print(result)  # 条件为真，输出 "b 大于 5"
+
+# 6. 空代码块（pass 语句）
+# 如果某个条件不需要执行任何操作，可以使用 pass 语句占位
+c = 4
+if c > 5:
+    pass  # 条件为假，不执行任何操作
+else:
+    print("6. pass 语句: c 不大于 5")  # 条件为假，执行此代码块
+```
+
+## for 循环
+
+```python
+# 1. 遍历列表
+# for 循环可以遍历列表中的每个元素
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)  # 输出: apple, banana, cherry
+
+# 2. 遍历字符串
+# for 循环可以遍历字符串中的每个字符
+word = "Python"
+for char in word:
+    print(char)  # 输出: P, y, t, h, o, n
+
+# 3. 遍历字典的键
+# for 循环可以遍历字典的键
+my_dict = {"name": "Alice", "age": 25, "city": "New York"}
+for key in my_dict:
+    print(key)  # 输出: name, age, city
+
+# 4. 遍历字典的值
+# for 循环可以遍历字典的值
+for value in my_dict.values():
+    print(value)  # 输出: Alice, 25, New York
+
+# 5. 遍历字典的键值对
+# for 循环可以遍历字典的键值对
+for key, value in my_dict.items():
+    print(f"{key}: {value}")  # 输出: name: Alice, age: 25, city: New York
+
+# 6. 使用 range() 函数
+# range() 生成一个数字序列，常用于控制循环次数
+for i in range(5):
+    print(i)  # 输出: 0, 1, 2, 3, 4
+
+# 7. 嵌套 for 循环
+# for 循环可以嵌套，用于处理多维数据结构
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+for row in matrix:
+    for num in row:
+        print(num, end=" ")  # 输出: 1 2 3 4 5 6 7 8 9
+    print()  # 换行
+
+# 8. 使用 enumerate() 获取索引和值
+# enumerate() 返回索引和对应的值
+for index, value in enumerate(fruits):
+    print(f"索引: {index}, 值: {value}")  # 输出: 索引: 0, 值: apple, 索引: 1, 值: banana, 索引: 2, 值: cherry
+
+# 9. 使用 zip() 遍历多个序列
+# zip() 将多个序列组合成一个可迭代对象
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+for name, age in zip(names, ages):
+    print(f"{name} 的年龄是 {age}")  # 输出: Alice 的年龄是 25, Bob 的年龄是 30, Charlie 的年龄是 35
+
+# 10. 列表推导式
+# 列表推导式是一种简洁的创建列表的方式，基于 for 循环
+squares = [x**2 for x in range(5)]
+print(squares)  # 输出: [0, 1, 4, 9, 16]
+
+# 11. 带条件的列表推导式
+# 可以在列表推导式中添加条件
+even_squares = [x**2 for x in range(10) if x % 2 == 0]
+print(even_squares)  # 输出: [0, 4, 16, 36, 64]
+
+# 12. 遍历文件内容
+# for 循环可以逐行遍历文件内容
+with open("example.txt", "r") as file:
+    for line in file:
+        print(line.strip())  # 输出文件每一行的内容（去除换行符）
+
+# 13. 遍历生成器
+# 生成器是一种惰性计算的迭代器，for 循环可以遍历生成器
+def my_generator():
+    yield 1
+    yield 2
+    yield 3
+
+for value in my_generator():
+    print(value)  # 输出: 1, 2, 3
+
+# 14. 使用 else 子句
+# for 循环可以带有 else 子句，当循环正常结束时执行
+for i in range(3):
+    print(i)
+else:
+    print("循环正常结束")  # 输出: 0, 1, 2, 循环正常结束
+
+# 15. 使用 break 和 continue
+# break 用于提前退出循环，continue 用于跳过当前迭代
+for i in range(5):
+    if i == 3:
+        break  # 当 i 等于 3 时退出循环
+    print(i)  # 输出: 0, 1, 2
+
+for i in range(5):
+    if i == 3:
+        continue  # 当 i 等于 3 时跳过当前迭代
+    print(i)  # 输出: 0, 1, 2, 4
+```
+
+## while 循环
+
+```python
+# 1. 基本的 while 循环
+# while 循环在条件为真时重复执行代码块
+count = 0
+while count < 5:
+    print("1. 当前计数:", count)
+    count += 1  # 输出: 当前计数: 0, 1, 2, 3, 4
+
+# 2. 使用 break 退出循环
+# break 用于提前退出 while 循环
+count = 0
+while True:
+    if count >= 5:
+        break  # 当 count 大于等于 5 时退出循环
+    print("2. 当前计数:", count)
+    count += 1  # 输出: 当前计数: 0, 1, 2, 3, 4
+
+# 3. 使用 continue 跳过当前迭代
+# continue 用于跳过当前迭代，直接进入下一次循环
+count = 0
+while count < 5:
+    count += 1
+    if count == 3:
+        continue  # 当 count 等于 3 时跳过当前迭代
+    print("3. 当前计数:", count)  # 输出: 当前计数: 1, 2, 4, 5
+
+# 4. 使用 else 子句
+# while 循环可以带有 else 子句，当循环正常结束时执行
+count = 0
+while count < 3:
+    print("4. 当前计数:", count)
+    count += 1
+else:
+    print("4. 循环正常结束")  # 输出: 当前计数: 0, 1, 2, 循环正常结束
+
+# 5. 无限循环
+# 如果条件永远为真，while 循环会无限执行
+# 以下代码被注释掉，避免无限循环
+# while True:
+#     print("5. 这是一个无限循环")
+
+# 6. 用户输入控制循环
+# 使用用户输入来控制 while 循环的执行
+while True:
+    user_input = input("6. 请输入 'exit' 退出循环: ")
+    if user_input == "exit":
+        break
+    print("6. 你输入了:", user_input)
+
+# 7. 嵌套 while 循环
+# while 循环可以嵌套，用于处理复杂逻辑
+i = 1
+while i <= 3:
+    j = 1
+    while j <= 3:
+        print(f"7. i={i}, j={j}")
+        j += 1
+    i += 1  # 输出: i=1, j=1; i=1, j=2; i=1, j=3; i=2, j=1; ...
+
+# 8. 使用标志变量控制循环
+# 使用标志变量来控制 while 循环的执行
+flag = True
+count = 0
+while flag:
+    print("8. 当前计数:", count)
+    count += 1
+    if count >= 3:
+        flag = False  # 当 count 大于等于 3 时退出循环
+    # 输出: 当前计数: 0, 1, 2
+
+# 9. 遍历列表直到条件满足
+# 使用 while 循环遍历列表，直到满足特定条件
+numbers = [1, 2, 3, 4, 5]
+index = 0
+while index < len(numbers):
+    if numbers[index] == 3:
+        print("9. 找到数字 3，退出循环")
+        break
+    print("9. 当前数字:", numbers[index])
+    index += 1  # 输出: 当前数字: 1, 当前数字: 2, 找到数字 3，退出循环
+
+# 10. 模拟 do-while 循环
+# Python 没有 do-while 循环，但可以通过 while 循环模拟
+count = 0
+while True:
+    print("10. 当前计数:", count)
+    count += 1
+    if count >= 3:
+        break  # 输出: 当前计数: 0, 1, 2
+```
+
+
+
 ## 函数
 
 ### 定义函数
@@ -554,5 +806,135 @@ lambda 参数1, 参数2, ...: 表达式
 # 示例
 add = lambda x, y: x + y
 print(add(2, 3))  # 输出: 5
+```
+
+## 文件
+
+```python
+# ==================== 文件的基本操作 ====================
+
+# 1. 打开文件
+# 使用 open() 函数打开文件，模式可以是 'r'（读取）、'w'（写入）、'a'（追加）等
+file = open("example.txt", "r")  # 以只读模式打开文件
+print("1. 文件已打开:", file.name)
+
+# 2. 读取文件内容
+# 使用 read() 方法读取文件的全部内容
+content = file.read()
+print("2. 文件内容如下:")
+print(content)
+
+# 3. 关闭文件
+# 使用 close() 方法关闭文件
+file.close()
+print("3. 文件已关闭")
+
+# 4. 使用 with 语句自动管理文件
+# with 语句会在代码块执行完毕后自动关闭文件
+with open("example.txt", "r") as file:
+    content = file.read()
+    print("4. 使用 with 语句读取文件内容:")
+    print(content)
+
+# 5. 逐行读取文件
+# 使用 readline() 方法逐行读取文件
+with open("example.txt", "r") as file:
+    print("5. 逐行读取文件:")
+    line = file.readline()
+    while line:
+        print(line.strip())  # 去除每行的换行符
+        line = file.readline()
+
+# 6. 读取所有行到列表
+# 使用 readlines() 方法将文件的所有行读取到一个列表中
+with open("example.txt", "r") as file:
+    lines = file.readlines()
+    print("6. 文件的所有行:")
+    for line in lines:
+        print(line.strip())
+
+# 7. 写入文件
+# 使用 'w' 模式打开文件并写入内容（会覆盖文件原有内容）
+with open("output.txt", "w") as file:
+    file.write("7. 这是写入的第一行内容。\n")
+    file.write("7. 这是写入的第二行内容。\n")
+    print("7. 内容已写入 output.txt")
+
+# 8. 追加内容到文件
+# 使用 'a' 模式打开文件并追加内容
+with open("output.txt", "a") as file:
+    file.write("8. 这是追加的内容。\n")
+    print("8. 内容已追加到 output.txt")
+
+# 9. 检查文件是否存在
+# 使用 os.path.exists() 检查文件是否存在
+import os
+if os.path.exists("example.txt"):
+    print("9. 文件 example.txt 存在")
+else:
+    print("9. 文件 example.txt 不存在")
+
+# 10. 删除文件
+# 使用 os.remove() 删除文件
+if os.path.exists("output.txt"):
+    os.remove("output.txt")
+    print("10. 文件 output.txt 已删除")
+else:
+    print("10. 文件 output.txt 不存在")
+
+
+# ==================== 文件的高级操作 ====================
+
+# 11. 读取和写入二进制文件
+# 使用 'rb' 和 'wb' 模式处理二进制文件
+with open("binary_file.bin", "wb") as file:
+    file.write(b"11. 这是二进制数据。\n")  # 写入二进制数据
+
+with open("binary_file.bin", "rb") as file:
+    content = file.read()
+    print("11. 读取二进制文件内容:", content)
+
+# 12. 使用 seek() 移动文件指针
+# seek() 用于移动文件指针到指定位置
+with open("example.txt", "r") as file:
+    file.seek(10)  # 将文件指针移动到第 10 个字节
+    content = file.read()
+    print("12. 从第 10 个字节开始读取文件内容:")
+    print(content)
+
+# 13. 获取文件大小
+# 使用 os.path.getsize() 获取文件大小（字节数）
+file_size = os.path.getsize("example.txt")
+print("13. 文件 example.txt 的大小:", file_size, "字节")
+
+# 14. 遍历目录中的文件
+# 使用 os.listdir() 获取目录中的所有文件
+directory = "."
+print("14. 目录中的文件:")
+for file_name in os.listdir(directory):
+    print(file_name)
+
+# 15. 复制文件
+# 使用 shutil.copy() 复制文件
+import shutil
+shutil.copy("example.txt", "example_copy.txt")
+print("15. 文件 example.txt 已复制为 example_copy.txt")
+
+# 16. 移动文件
+# 使用 shutil.move() 移动文件
+shutil.move("example_copy.txt", "backup/example_copy.txt")
+print("16. 文件 example_copy.txt 已移动到 backup 目录")
+
+# 17. 创建目录
+# 使用 os.mkdir() 创建目录
+if not os.path.exists("new_directory"):
+    os.mkdir("new_directory")
+    print("17. 目录 new_directory 已创建")
+
+# 18. 删除目录
+# 使用 os.rmdir() 删除空目录
+if os.path.exists("new_directory"):
+    os.rmdir("new_directory")
+    print("18. 目录 new_directory 已删除")
 ```
 
