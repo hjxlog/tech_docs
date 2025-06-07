@@ -58,6 +58,10 @@ export default defineUserConfig({
                 text: '思考',
                 link: '/Thought/overview.md',
             },
+            {
+                text: 'AI',
+                link: '/AI/basics_concept.md',
+            },
         ],
 
         // 可折叠的侧边栏
@@ -109,6 +113,12 @@ export default defineUserConfig({
                 {
                     text: 'AI应用落地过程中的数据治理',
                     link: 'AI应用落地过程中的数据治理'
+                },
+            ],
+            '/AI/': [
+                {
+                    text: 'AI基础知识',
+                    link: 'basics_concept'
                 },
             ],
         },
