@@ -62,6 +62,10 @@ export default defineUserConfig({
                 text: 'AI',
                 link: '/AI/basics_concept.md',
             },
+            {
+                text: '网络',
+                link: '/Network/理解白名单机制：谁的资源谁做主.md',
+            },
         ],
 
         // 可折叠的侧边栏
@@ -119,6 +123,12 @@ export default defineUserConfig({
                 {
                     text: 'AI基础知识',
                     link: 'basics_concept'
+                },
+            ],
+            '/Network/': [
+                {
+                    text: '理解白名单机制：谁的资源谁做主',
+                    link: '理解白名单机制：谁的资源谁做主'
                 },
             ],
         },
